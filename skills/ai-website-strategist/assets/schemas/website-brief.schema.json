@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/website-brief.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "site", "audiences", "products", "primaryAction"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "site": {
+      "type": "object",
+      "required": ["name", "category", "businessStage", "productMaturity", "buyingMotion"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 1 },
+        "businessStage": { "enum": ["category-creation", "category-entry", "expansion", "consolidation"] },
+        "productMaturity": { "enum": ["concept", "limited-release", "generally-available", "platform"] },
+        "buyingMotion": { "enum": ["self-serve", "sales-assisted", "enterprise-led", "hybrid"] },
+        "narrative": { "enum": ["platform-transformation", "trusted-intelligence", "product-led-experience", "autonomous-workflow"] },
+        "locales": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "audiences": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/audience" }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/product" }
+    },
+    "primaryAction": { "$ref": "#/$defs/action" },
+    "secondaryActions": { "type": "array", "items": { "$ref": "#/$defs/action" } },
+    "proof": { "type": "array", "items": { "$ref": "#/$defs/proof" } },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "assumptions": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "action": {
+      "type": "object",
+      "required": ["id", "label", "destination"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "type": "string", "minLength": 1 },
+        "destination": { "type": "string", "minLength": 1 }
+      }
+    },
+    "audience": {
+      "type": "object",
+      "required": ["id", "label", "role", "needs", "objections"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "type": "string", "minLength": 1 },
+        "role": { "type": "string", "minLength": 1 },
+        "primary": { "type": "boolean" },
+        "needs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "objections": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "product": {
+      "type": "object",
+      "required": ["id", "name", "summary", "jobs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string", "minLength": 1 },
+        "jobs": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "required": ["id", "type", "status", "summary"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "enum": ["product", "customer", "technical", "operational", "adoption", "illustrative"] },
+        "status": { "enum": ["verified", "qualified", "illustrative", "planned", "prohibited"] },
+        "summary": { "type": "string", "minLength": 1 },
+        "qualifier": { "type": "string" },
+        "owner": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/audit-report.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "siteName", "total", "grade", "band", "readiness", "categories", "blockers", "activeBlockerIds", "recommendations"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "siteName": { "type": "string" },
+    "reviewedAt": { "type": ["string", "null"] },
+    "total": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "grade": { "enum": ["A", "B", "C", "D", "F"] },
+    "band": { "type": "string" },
+    "readiness": { "enum": ["blocked", "ready-with-follow-up", "not-ready"] },
+    "categories": { "type": "array", "minItems": 10, "maxItems": 10 },
+    "blockers": { "type": "array" },
+    "activeBlockerIds": { "type": "array", "items": { "type": "string" } },
+    "recommendations": { "type": "array" }
+  }
+}

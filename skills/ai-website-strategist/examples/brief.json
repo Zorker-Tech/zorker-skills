@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "name": "[COMPANY]",
+    "category": "Enterprise AI workflow platform",
+    "businessStage": "category-entry",
+    "productMaturity": "generally-available",
+    "buyingMotion": "hybrid",
+    "narrative": "autonomous-workflow",
+    "locales": ["en"]
+  },
+  "audiences": [
+    {
+      "id": "operations-leader",
+      "label": "Operations leaders",
+      "role": "Owns workflow outcomes and adoption",
+      "primary": true,
+      "needs": ["reduce cycle time", "preserve review and control"],
+      "objections": ["unclear reliability", "implementation effort"]
+    },
+    {
+      "id": "technical-evaluator",
+      "label": "Technical evaluators",
+      "role": "Validates architecture, boundaries, and integration",
+      "needs": ["understand system behavior", "inspect deployment constraints"],
+      "objections": ["unsupported claims", "unclear data handling"]
+    }
+  ],
+  "products": [
+    {
+      "id": "workflow-agent",
+      "name": "[PRODUCT]",
+      "summary": "Plans and completes bounded operational workflows with review checkpoints.",
+      "jobs": ["prepare work", "coordinate steps", "produce reviewable output"]
+    }
+  ],
+  "primaryAction": {
+    "id": "request-consultation",
+    "label": "Request a consultation",
+    "destination": "/contact"
+  },
+  "secondaryActions": [
+    {
+      "id": "read-documentation",
+      "label": "Read documentation",
+      "destination": "/docs"
+    }
+  ],
+  "proof": [
+    {
+      "id": "illustrative-workflow",
+      "type": "illustrative",
+      "status": "illustrative",
+      "summary": "A clearly labeled example showing input, planning, review, and output.",
+      "qualifier": "Illustrative flow; replace with approved product evidence before launch.",
+      "owner": "product-marketing"
+    }
+  ],
+  "constraints": ["Do not publish unapproved outcome metrics.", "Provide static alternatives for interactive demonstrations."],
+  "assumptions": ["Trust evidence and deployment details require owner approval."]
+}

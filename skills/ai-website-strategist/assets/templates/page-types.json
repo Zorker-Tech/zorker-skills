@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "pageTypes": {
+    "home": ["hero", "product-demo", "audience-paths", "capabilities", "proof", "trust-summary", "resources", "final-action"],
+    "product-overview": ["hero", "system-map", "workflow", "capabilities", "controls", "proof", "deployment", "final-action"],
+    "product-detail": ["hero", "workflow", "demo", "controls", "examples", "proof", "prerequisites", "final-action"],
+    "solution": ["hero", "problem", "new-workflow", "role-impact", "product-map", "proof", "adoption", "related-resources", "final-action"],
+    "trust": ["hero", "data-handling", "access-controls", "deployment", "evaluation", "operations", "responsibilities", "evidence-access"],
+    "customers": ["hero", "evidence-index", "methodology", "related-solutions", "final-action"],
+    "resources": ["hero", "filters", "resource-index", "featured-paths", "final-action"],
+    "documentation": ["hero", "quick-starts", "task-paths", "concepts", "reference", "limits-errors", "support"],
+    "company": ["hero", "mission", "principles", "governance", "company-context", "careers", "contact"],
+    "contact": ["hero", "expectations", "contact-form", "alternate-paths", "privacy-note"]
+  }
+}

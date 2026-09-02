@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/audit-input.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "siteName", "categories", "blockers"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "siteName": { "type": "string", "minLength": 1 },
+    "reviewedAt": { "type": "string" },
+    "categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z0-9]+(?:-[a-z0-9]+)*$": {
+          "type": "object",
+          "required": ["score", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 5 },
+            "evidence": { "type": "array", "items": { "type": "string" } },
+            "notes": { "type": "string" }
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z0-9]+(?:-[a-z0-9]+)*$": {
+          "type": "object",
+          "required": ["present", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "present": { "type": "boolean" },
+            "evidence": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    }
+  }
+}

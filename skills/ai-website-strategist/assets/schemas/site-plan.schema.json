@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/site-plan.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "site", "strategy", "audiences", "products", "actions", "journeys", "pages", "navigation", "proof", "claims", "analytics", "assumptions", "constraints"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "site": { "type": "object" },
+    "strategy": { "type": "object" },
+    "audiences": { "type": "array", "minItems": 1 },
+    "products": { "type": "array", "minItems": 1 },
+    "actions": { "type": "array", "minItems": 1 },
+    "journeys": { "type": "array", "minItems": 1 },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "route", "type", "phase", "intent", "audiences", "promise", "primaryActionId", "secondaryActionIds", "sections", "claimIds", "owner", "reviewTrigger"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "route": { "type": "string", "pattern": "^/" },
+          "type": { "$ref": "#/$defs/id" },
+          "phase": { "$ref": "#/$defs/id" },
+          "intent": { "type": "string", "minLength": 1 },
+          "audiences": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/id" } },
+          "promise": { "type": "string", "minLength": 1 },
+          "primaryActionId": { "$ref": "#/$defs/id" },
+          "secondaryActionIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+          "sections": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/section" } },
+          "claimIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+          "owner": { "type": "string", "minLength": 1 },
+          "reviewTrigger": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "navigation": { "type": "object" },
+    "proof": { "type": "array" },
+    "claims": { "type": "array" },
+    "analytics": { "type": "object" },
+    "assumptions": { "type": "array" },
+    "constraints": { "type": "array" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "section": {
+      "type": "object",
+      "required": ["id", "component", "purpose", "claimIds"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "component": { "$ref": "#/$defs/id" },
+        "purpose": { "type": "string", "minLength": 1 },
+        "claimIds": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "./catalog.schema.json",
+  "catalogVersion": 1,
+  "skills": [
+    {
+      "name": "ai-website-strategist",
+      "displayName": "AI Website Strategist",
+      "description": "Plan, score, scaffold, and validate enterprise AI websites and public product portals.",
+      "version": "1.0.0",
+      "path": "ai-website-strategist",
+      "entry": "SKILL.md",
+      "commands": {
+        "toolkit": "scripts/website-toolkit.mjs"
+      },
+      "tags": [
+        "website",
+        "strategy",
+        "content",
+        "seo",
+        "geo",
+        "ux",
+        "scoring",
+        "scaffolding"
+      ]
+    }
+  ]
+}

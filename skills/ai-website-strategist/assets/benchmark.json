@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "scale": {
+    "minimum": 0,
+    "maximum": 5,
+    "labels": {
+      "0": "absent, broken, or contradicted",
+      "1": "mentioned but unusable or unsupported",
+      "2": "partial, inconsistent, or high-friction",
+      "3": "functional baseline with material gaps",
+      "4": "strong, consistent, measured, and supported",
+      "5": "exemplary, differentiated, maintained, and validated"
+    }
+  },
+  "categories": [
+    { "id": "strategy-positioning", "label": "Strategy and positioning", "weight": 12 },
+    { "id": "information-architecture", "label": "Information architecture", "weight": 12 },
+    { "id": "content-messaging", "label": "Content and messaging", "weight": 12 },
+    { "id": "conversion-journeys", "label": "Conversion journeys", "weight": 10 },
+    { "id": "product-demonstration", "label": "Product demonstration", "weight": 10 },
+    { "id": "proof-trust", "label": "Proof and trust", "weight": 10 },
+    { "id": "ui-ux-accessibility", "label": "UI, UX, and accessibility", "weight": 10 },
+    { "id": "discovery-answer-readiness", "label": "Discovery and answer readiness", "weight": 10 },
+    { "id": "performance-engineering", "label": "Performance and engineering", "weight": 8 },
+    { "id": "analytics-operations", "label": "Analytics and operations", "weight": 6 }
+  ],
+  "blockers": [
+    { "id": "unapproved-claims", "label": "Fabricated or unapproved consequential claims" },
+    { "id": "broken-primary-action", "label": "Broken primary action or critical navigation" },
+    { "id": "inaccessible-primary-journey", "label": "Inaccessible primary journey or keyboard trap" },
+    { "id": "exposed-sensitive-data", "label": "Exposed credentials, private data, or personal information" },
+    { "id": "unavailable-core-content", "label": "Core public content unavailable to rendering or indexing" },
+    { "id": "unsupported-assurance", "label": "Security, privacy, compliance, or availability assurance exceeds evidence" },
+    { "id": "no-failure-recovery", "label": "No recovery path for a failed high-value action" },
+    { "id": "misleading-interaction", "label": "Destructive or misleading interaction without clear consent and reversal" }
+  ],
+  "grades": [
+    { "minimum": 90, "grade": "A", "label": "launch-ready" },
+    { "minimum": 80, "grade": "B", "label": "strong" },
+    { "minimum": 70, "grade": "C", "label": "viable-with-gaps" },
+    { "minimum": 60, "grade": "D", "label": "material-risk" },
+    { "minimum": 0, "grade": "F", "label": "rebuild-foundations" }
+  ]
+}

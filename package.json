@@ -1,0 +1,47 @@
+{
+  "name": "@zorker/skills",
+  "version": "0.1.0",
+  "description": "A catalog, selector, installer, and runtime for reusable AI agent skills.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Zorker Skills contributors",
+  "homepage": "https://www.npmjs.com/package/@zorker/skills",
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "cli",
+    "codex",
+    "automation"
+  ],
+  "bin": {
+    "zorker-skills": "cli/bin/zorker-skills.mjs",
+    "zskills": "cli/bin/zorker-skills.mjs"
+  },
+  "exports": {
+    "./catalog": "./cli/src/catalog.mjs",
+    "./installer": "./cli/src/installer.mjs"
+  },
+  "files": [
+    "cli/bin",
+    "cli/src",
+    "skills",
+    "!skills/**/scripts/*.test.mjs",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test cli/test/cli.test.mjs skills/ai-website-strategist/scripts/website-toolkit.test.mjs",
+    "validate": "node cli/bin/zorker-skills.mjs validate all",
+    "audit:package": "node cli/test/package-audit.mjs",
+    "prepack": "npm run test && npm run validate && npm run audit:package"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": false
+  }
+}

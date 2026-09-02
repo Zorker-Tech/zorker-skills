@@ -1,0 +1,8 @@
+.git/
+.tmp/
+.npmrc
+.npmrc.example
+cli/test/
+skills/**/scripts/*.test.mjs
+*.tgz
+*.log

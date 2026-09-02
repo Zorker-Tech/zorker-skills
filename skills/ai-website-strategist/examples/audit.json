@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "siteName": "[COMPANY] public website",
+  "reviewedAt": "2026-01-01",
+  "categories": {
+    "strategy-positioning": { "score": 4, "evidence": ["Primary audience and action are explicit."], "notes": "Mechanism can be more specific." },
+    "information-architecture": { "score": 3, "evidence": ["Core journeys and route ownership are documented."] },
+    "content-messaging": { "score": 3, "evidence": ["Priority pages use direct answers and qualified claims."] },
+    "conversion-journeys": { "score": 3, "evidence": ["Primary action is consistent; recovery needs testing."] },
+    "product-demonstration": { "score": 2, "evidence": ["Storyboard exists; production fallback is incomplete."] },
+    "proof-trust": { "score": 2, "evidence": ["Claim register exists; customer and operational evidence is limited."] },
+    "ui-ux-accessibility": { "score": 3, "evidence": ["Keyboard and responsive checks pass on core templates."] },
+    "discovery-answer-readiness": { "score": 3, "evidence": ["Intent map and metadata contract are defined."] },
+    "performance-engineering": { "score": 3, "evidence": ["Budgets are defined; field monitoring is pending."] },
+    "analytics-operations": { "score": 2, "evidence": ["Event contract exists; ownership cadence is incomplete."] }
+  },
+  "blockers": {
+    "unapproved-claims": { "present": false, "evidence": [] },
+    "broken-primary-action": { "present": false, "evidence": [] },
+    "inaccessible-primary-journey": { "present": false, "evidence": [] },
+    "exposed-sensitive-data": { "present": false, "evidence": [] },
+    "unavailable-core-content": { "present": false, "evidence": [] },
+    "unsupported-assurance": { "present": false, "evidence": [] },
+    "no-failure-recovery": { "present": false, "evidence": [] },
+    "misleading-interaction": { "present": false, "evidence": [] }
+  }
+}

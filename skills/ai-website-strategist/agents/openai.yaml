@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Website Strategist"
+  short_description: "Plan, score, scaffold, and validate enterprise AI websites"
+  default_prompt: "Use $ai-website-strategist to plan, score, scaffold, and validate a complete enterprise AI website."
