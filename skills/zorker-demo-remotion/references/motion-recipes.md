@@ -1,39 +1,39 @@
-# 通用镜头配方
+# Reusable Motion Recipes
 
-下面是可组合的导演方案，不是固定项目模板。时长、倍率、颜色和坐标均按当前产品及受众确定。
+These are composable directing patterns, not fixed project templates. Choose duration, magnification, color, and coordinates for the current product and audience.
 
-## 形状入口 → 真实界面
+## Shape portal to real interface
 
-适合产品介绍、品牌短片的开场。选择品牌标识中的线、圆或负空间，与真实组件中的边框、输入光标或进度环建立语义对应。
+Useful for product introductions and brand-film openings. Connect a line, circle, or negative space in the brand mark to a real component's border, caret, or progress ring with a meaningful relationship.
 
-1. 先测量两个场景的目标几何，把它们转换到同一屏幕坐标系。
-2. 在第一场向共同锚点推进；大倍率可使用对数插值，避免起步几乎不动、结尾突然爆冲。
-3. 在轮廓、位置、尺寸最接近时接管下一层，短淡化或遮挡切只用于修饰，不能替代端点匹配。
-4. 下一场拉回适当景别，让观众识别真实产品和下一动作；阅读正文时停稳。
-5. 抽查接缝前后位置、尺度、速度与曝光。位图不足以放大时换有权使用的清晰素材或调整构图。
+1. Measure target geometry in both scenes and convert it to a shared screen coordinate system.
+2. Push toward the shared anchor in the first scene. For large ratios, logarithmic interpolation can prevent an almost motionless start and an abrupt final surge.
+3. Hand over to the next layer where outline, position, and size align most closely. A short dissolve or occlusion cut refines the match rather than replacing it.
+4. Pull back to a useful framing so viewers recognize the real product and next action; settle while body text is read.
+5. Check position, scale, velocity, and exposure across the seam. If a bitmap cannot support the magnification, use a suitable authorized asset or change the framing.
 
-没有合适形状时用动作匹配或直接切镜，不强行制造 Logo 穿越。
+Without a suitable shape, use action matching or a direct cut instead of forcing a logo portal.
 
-## 字形接力 → 新语义
+## Glyph relay to new meaning
 
-适合短标题、状态转变和功能发布。定义起始、中间（可选）、最终语义，按字位映射轮廓、基线和水平位置；不同长度需重新排版。逐字错峰形成波次，但最终标题应有整句可读的停留。
+Useful for short titles, state changes, and launches. Define initial, optional intermediate, and final meanings. Map outline, baseline, and horizontal position by glyph slot, relaying out different lengths. Stagger glyphs into waves, but hold the final title long enough to read as a whole.
 
-只有中间文字有意义时才展示并给阅读时间。不随机滚乱码；中英文混排、缺字和变字重单独检查。翻转可用遮罩/压缩投影模拟，不必强行使用真实3D。
+Show intermediate text only when meaningful and allow reading time. Avoid random garbage-character reels. Check mixed scripts, missing glyphs, and weight changes separately. Masks or compressed projections can suggest a flip without requiring true 3D.
 
-## 输入前沿 → 平滑跟拍
+## Typing front to smooth tracking
 
-适合表单、搜索、终端、编辑器和 AI 工具 demo。
+Useful for forms, search, terminals, editors, and AI-tool demos.
 
-- 使用实际字体、字距和容器宽度求已出现文本的光标位置，按 grapheme 处理中文与 emoji。
-- 以一条确定性时间曲线同时驱动输入状态与相机目标；输入停顿时相机自然收敛。
-- 用安全窗/dead zone 保留上下文，固定历史采样或解析平滑抑制逐字跳动，不依赖先前播放帧。
-- 换行时兼顾行首定位和纵向移动；短文案无需为了套用跟拍而额外移动。
-- 提交前保证按钮可见且可用，输入后留阅读时间；结果反馈不依赖真实外部写入。
+- Derive the caret position from the actual font, spacing, and container width; handle Chinese and emoji as graphemes.
+- Drive typing state and camera target from a deterministic time curve; let the camera settle naturally during pauses.
+- Preserve context with a safe window/dead zone. Use fixed historical samples or analytical smoothing, not dependence on previously played frames.
+- Handle line starts and vertical motion together when wrapping. Short copy does not require unnecessary camera movement.
+- Keep the submit button visible and enabled before submission and allow reading time after typing. Result feedback must not depend on real external writes.
 
-## 局部结果 → 系统价值
+## Local result to system value
 
-适合分析工具、工业面板、协作与物流。先用特写证明一项结果，再拉远交代它在系统中的位置。背景层按信息层级逐步出现，不随机悬浮。重要数字、图表和术语需保留来源与演示标识，不通过快速运动躲开阅读。
+Useful for analytics, industrial panels, collaboration, and logistics. Prove one result in close-up, then pull back to establish its place in the system. Reveal background layers by information hierarchy, not arbitrary floating motion. Retain evidence and demonstration labels for important numbers, charts, and terminology; do not rush past them to avoid scrutiny.
 
-## 教程低运动变体
+## Low-motion tutorial variant
 
-删除非必要品牌转场，使用稳定全景交代入口，仅在操作区域小幅推进；每步按“动作→反馈→检查点”落稳。字幕和指示线不遮按钮。成功状态保留足够时间，需要时演示失败恢复路径。片尾总结可复现结果，而非强制营销 CTA。
+Remove unnecessary brand transitions. Establish the entry point with a stable wide shot and push modestly only toward the operation area. Settle each step as action -> feedback -> checkpoint. Captions and pointers must not obscure buttons. Hold success states long enough and demonstrate recovery paths when needed. End with reproducible outcomes rather than a mandatory marketing CTA.

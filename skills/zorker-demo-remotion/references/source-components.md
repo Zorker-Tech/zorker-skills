@@ -1,26 +1,26 @@
-# 指定源码 → 纯展示组件
+# Specified Source to Pure Presentation Components
 
-## 来源证据
+## Provenance
 
-读取源仓库约束、工作区状态、包配置和已有组件目录/Storybook/fixtures。优先从已有 catalog 找真实组件、状态和 token，再沿 imports 查依赖。不携带无关凭据。
+Read source-repository instructions, working-tree status, package configuration, and existing component catalogs, Storybook stories, or fixtures. Find real components, states, and tokens through existing catalogs before following imports. Do not carry unrelated credentials.
 
-为每个源组件记录：用户指定仓库、真实相对路径、导出符号、可取得的 commit（脏文件另注明）、目标文件/镜头、直接 import 或提取方式、保留的结构与样式资源、改动及原因、代码/字体/图像许可或未决项、同视口代表状态对照。
+For each component record the user-specified repository, actual relative path, exported symbol, available commit (identify dirty files separately), destination file/shot, direct import or extraction method, retained structure and style assets, adaptations and reasons, code/font/image licensing or unresolved rights, and representative same-viewport comparisons.
 
-名称 Native、Official 或相似外观不是来源证明，必须追溯文件与导入链。
+Names such as Native or Official, and visual similarity alone, do not prove provenance. Trace files and import chains.
 
-## 解耦顺序
+## Decoupling order
 
-1. 已是纯展示层：直接导入，注入原主题与字体。
-2. 仅需要 context：建立最小只读 provider，传入确定性 fixture，不启动整套应用。
-3. 混合服务逻辑：在视频工作区提取展示子树，保留 JSX/SVG 和样式，移除服务 hook，将其输出改为 props。仅获授权才在源应用重构。
-4. 非 React 来源：说明运行边界，迁移实际展示结构、资源和布局到兼容层，保留逐项映射；不得称作直接 import。若迁移不能满足要求，先请求用户选择。
+1. Already pure presentation: import directly and supply the original theme and fonts.
+2. Context only: create the smallest read-only provider with deterministic fixtures; do not boot the entire application.
+3. Mixed service logic: extract the presentation subtree into the video workspace, retain JSX/SVG and styles, remove service hooks, and expose their outputs as props. Refactor the original application only with authorization.
+4. Non-React source: explain runtime boundaries, port the actual presentation structure, assets, and layout into a compatible layer, and retain a mapping. Do not call this a direct import. If a port cannot satisfy the request, ask the user to choose.
 
-纯组件输入是展示数据/状态，输出是画面；不依赖真实登录、数据库写入、网络、WebSocket、Electron IPC、当前时钟、随机值或真实点击。外层 Remotion adapter 按帧构造 props，回调 inert，不发送消息、付款或删除。CSS 自运行动画在适配层替换为帧驱动样式，不改变业务布局。
+Pure components receive presentation data/state and produce visuals. They must not depend on real authentication, database writes, networking, WebSockets, Electron IPC, the current clock, random values, or real clicks. The outer Remotion adapter constructs props from the frame; callbacks are inert and do not send messages, pay, or delete. Replace self-running CSS animations with frame-driven styles in the adapter without changing business layout.
 
-例如把账户 hook 的输出改成 accountLabel，把发送 hook 的状态改成 status/messages，保留真实 loading、disabled、error 和结果态，不能删除难处理状态。使用 synthetic fixture 并标明演示；压缩等待不能包装为性能实测。
+For example, expose an account hook's output as accountLabel and a send hook's state as status/messages. Preserve actual loading, disabled, error, and result visuals; do not delete difficult states. Label synthetic fixtures as demonstration data. Do not present compressed waiting time as measured performance.
 
-## 静态先于动态
+## Static before animated
 
-同视口、主题和状态下对照字体字重、换行、间距、圆角、边框、阴影、图标路径、状态和裁切。记录允许差异（隐私替换、比例适配、外部注释），确认后加镜头。
+Compare typography, weight, wrapping, spacing, radii, borders, shadows, icon paths, states, and clipping at the same viewport, theme, and state. Record permitted differences such as privacy substitutions, aspect-ratio adaptation, and external annotations before adding camera motion.
 
-“必须提取”与“先随便画一下”同时出现时，确认是否允许临时概念稿，不默认为撤销源码要求。明确授权的替代仅用于约定范围，并标记不满足最终源码验收。
+If the user both requires extraction and says to sketch something quickly, clarify whether a temporary concept is acceptable; do not silently interpret this as withdrawing the source requirement. Explicitly approved alternatives apply only within the agreed scope and remain labeled as not satisfying final source acceptance.

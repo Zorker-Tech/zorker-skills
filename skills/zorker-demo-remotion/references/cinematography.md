@@ -1,57 +1,57 @@
-# 摄影、运镜与剪辑
+# Cinematography, Camera Movement, and Editing
 
-先写“观众此刻该看见什么变化”，再选择运动。通常每镜一个注意力目标，阅读阶段留稳态。以下是选择工具，不是必做清单。
+Before choosing motion, write what change the viewer should notice now. Usually give each shot one attention target and keep reading phases stable. This is a selection toolkit, not a checklist to exhaust.
 
-| 技法 | 叙事用途 | 实现与边界 |
+| Technique | Narrative purpose | Implementation and limits |
 | --- | --- | --- |
-| 固定镜头 / hero hold | 教程结果、指标、落版 | 主体稳定，关键结果不能一闪而过 |
-| dolly-in 推轨 | 全局进入关键细节 | 2D 焦点缩放或真实 3D 位移；不把 scale 宣称真实透视 |
-| dolly-out 拉轨 / reveal | 局部成果揭示全局价值 | 恢复上下文，拉远后保证关键信息可读 |
-| truck 横移 / pedestal 纵移 | 沿流程或生产线展开 | 平移保持距离，区分 UI 滚动与相机运动 |
-| pan / tilt 摇镜 | 扫描场景、设备上下结构 | 3D 旋转视轴，2D 裁切模拟；控制阅读速度 |
-| tracking 跟拍 | 光标、文字前沿、物流目标 | 平滑焦点+安全窗，避免逐字符跳动 |
-| arc / orbit 弧线环绕 | 硬件体积、空间关系 | 真实模型环绕或小角度 2.5D；不虚构未知侧面 |
-| crane / jib 升降摇臂 | 团队/园区/系统尺度 | 升高并后退，保留空间层级 |
-| 航拍 / bird's-eye | 地图、能源、物流、地产 | 区域到节点；核实地理和资产，不穿地 |
-| macro insert 微距插镜 | 工艺、按钮反馈、数字 | 近景保留接镜上下文，防止位图失真 |
-| rack focus 移焦 | 从问题转移注意到答案 | 分层清晰/模糊交接，教程关键步骤不模糊 |
-| parallax 2.5D | 平面素材层次 | 前中后景不同位移，遮挡与光向一致 |
-| dolly zoom 眩晕变焦 | 认知/规模突变 | 真实相机位移+反向视场角；普通 scale 不等价，教程慎用 |
-| whip pan 甩镜 | 快速场景连接 | 同方向运动峰值切换后落稳，不靠模糊掩盖所有接缝 |
-| crash zoom 急推 | 促销、游戏、异常强调 | 快推后明确停住；严肃企业解释慎用 |
-| roll / Dutch angle | 紧张、失衡、实验风格 | 倾斜须有叙事动机，不常态扭曲产品 |
-| handheld 手持 | 人本、现场纪录 | 真实素材或固定种子低幅扰动；文字界面不持续抖 |
-| POV / over-shoulder | 操作者代入感 | 用户视角接操作特写，不遮挡步骤，不伪造真人背书 |
-| 爆炸图 / cutaway | 工业原理、系统结构 | 分层分离保留连接，再复位；无资料不能冒充真实剖面 |
-| 环绕定格 / bullet-time | 体育、游戏、硬件 hero | 需多视角素材或真实 3D，不能凭单图捏造结构 |
+| Locked-off shot / hero hold | Tutorial results, metrics, end cards | Keep the subject stable; important results must not flash past |
+| Dolly-in | Move from context into a crucial detail | Use a 2D focus-based scale or real 3D translation; do not call scaling true perspective movement |
+| Dolly-out / reveal | Expand a local outcome into broader value | Restore context while keeping key information readable |
+| Truck / pedestal | Follow a process or production line | Translate while maintaining distance; distinguish UI scrolling from camera motion |
+| Pan / tilt | Scan a scene or equipment structure | Rotate the viewing axis in 3D or simulate through 2D cropping; preserve reading time |
+| Tracking | Follow a cursor, typing front, or shipment | Smooth focus with a safe window; avoid per-character jumps |
+| Arc / orbit | Show hardware volume or spatial relationships | Use real models or restrained 2.5D angles; do not invent unseen sides |
+| Crane / jib | Reveal team, site, or system scale | Rise and retreat while preserving spatial hierarchy |
+| Aerial / bird's-eye | Maps, energy, logistics, real estate | Move between region and node; verify geography/assets and avoid ground intersections |
+| Macro insert | Craftsmanship, button feedback, numbers | Preserve contextual continuity and avoid enlarged bitmap artifacts |
+| Rack focus | Redirect attention from problem to answer | Hand off sharpness between layers; do not blur essential tutorial steps |
+| 2.5D parallax | Add depth to flat assets | Move foreground, middle, and background differently with consistent occlusion and lighting |
+| Dolly zoom | Emphasize a change in perception or scale | Combine real camera translation with opposing field-of-view change; scale alone is not equivalent; use sparingly in tutorials |
+| Whip pan | Connect scenes rapidly | Cut near peak same-direction motion and settle; do not hide every seam with blur |
+| Crash zoom | Promotions, games, exceptional events | Push quickly and stop clearly; use cautiously in serious enterprise explanations |
+| Roll / Dutch angle | Tension, imbalance, experimental tone | Motivate the tilt; do not routinely distort the product |
+| Handheld | Human-centered, on-location documentary tone | Use real footage or seeded low-amplitude motion; avoid continuous shaking over text |
+| POV / over-the-shoulder | Place viewers in the operator's position | Connect user perspective to action inserts without obscuring steps or fabricating endorsements |
+| Exploded view / cutaway | Explain industrial mechanisms or system structure | Separate layers while retaining connections, then restore; do not invent undocumented internals |
+| Frozen orbit / bullet time | Sports, games, hardware hero shots | Requires multiview assets or real 3D; a single image does not establish unseen structure |
 
-## 转场与剪辑语法
+## Transitions and editing grammar
 
-- **Match cut**：匹配形状/位置/动作，如圆孔接进度环；对齐屏幕锚点、尺寸、方向、速度，并有语义联系。
-- **Logo portal**：进入标识负空间，退出为真实 UI 同形区域；先端点匹配再调缓动。
-- **遮挡切 / invisible cut**：前景遮满时换场，维持方向、曝光，制造一镜到底观感；不要称为真实单镜拍摄。
-- **Match-on-action**：一次点击跨镜接续，下一镜显示同一次动作结果。
-- **Graphic morph / 字形接力**：保留基线或字位映射，中间文字有信息就给辨识时间；不兼容时遮罩换形，不硬拉字。
-- **J-cut / L-cut**：下一场声音先入/前场声音延续，保持声画因果；不强制旁白。
-- **平行剪辑**：角色或系统双线推进同一任务，保留身份与时间线索。
-- **蒙太奇**：压缩重复工作或展示广度，不能冒充连续操作证据。
-- **split-screen / before-after**：相同任务、条件、单位、视口，说明演示或实测，不不公平比较。
-- **speed ramp / 时间压缩**：省等待应标“已加速/等待省略”，不剪掉操作先后和必要步骤。
+- **Match cut:** Match shape, position, or action, such as a circular opening to a progress ring. Align screen anchor, size, direction, and velocity, with a meaningful connection.
+- **Logo portal:** Enter a mark's negative space and emerge into a matching real UI region. Match endpoints before tuning easing.
+- **Occlusion / invisible cut:** Change scenes when foreground coverage fills the frame, preserving direction and exposure. Describe this as a continuous-shot impression, not a real uncut take.
+- **Match-on-action:** Continue one click across shots; the next shot shows the outcome of that same action.
+- **Graphic morph / glyph relay:** Preserve baselines or glyph-slot mappings. Allow time to read meaningful intermediate text; use masks instead of stretching incompatible glyphs.
+- **J-cut / L-cut:** Bring the next scene's sound in early or carry the previous scene's sound forward to support continuity; voiceover is optional.
+- **Parallel editing:** Advance two roles or systems toward the same task, retaining identity and time cues.
+- **Montage:** Compress repetition or show breadth; do not present it as evidence of uninterrupted operation.
+- **Split-screen / before-and-after:** Match task, conditions, units, and viewport. Label demonstrations versus measurements and avoid unfair comparisons.
+- **Speed ramp / time compression:** Label accelerated or omitted waiting. Preserve operation order and necessary steps.
 
-## 运动工程
+## Motion engineering
 
-2D 无旋转相机：world 焦点 F、屏幕锚点 A、缩放 s，平移 `T=A-s*F`。明确 transform-origin 为 0 0 和矩阵顺序，避免平移被意外缩放。旋转相机需要完整矩阵。
+For an unrotated 2D camera with world focus F, screen anchor A, and scale s, translation is `T=A-s*F`. Set transform-origin to 0 0 and make matrix order explicit so translation is not accidentally scaled. Rotated cameras require a complete transform matrix.
 
-大倍率变化可用 `s(p)=exp(lerp(log(s0),log(s1),p))`，要求 s0/s1>0；它不自动保证接镜连续，需匹配端点位置、尺度和一阶速度，必要时用分段/Hermite 曲线。停镜端速度趋零，连续跟拍不要每段重新 ease-in。
+For large zoom ratios use `s(p)=exp(lerp(log(s0),log(s1),p))`, with s0 and s1 positive. This does not automatically ensure continuity: match endpoint position, scale, and first derivative, using piecewise or Hermite curves where needed. Settle to zero velocity for a hold; do not restart ease-in at every segment of a continuous move.
 
-输入跟拍从真实字体排版/预计算字宽取得文字前沿，设 dead zone，超出安全窗才追。采用固定历史采样低通或解析曲线，不用依赖前一渲染帧的累计状态。中文、emoji、换行与长文案单独测。
+Track typing using actual font layout or precomputed glyph widths. Set a dead zone and follow only outside the safe window. Use fixed historical-sample filtering or analytical curves, not accumulated state dependent on the previous rendered frame. Test Chinese text, emoji, wrapping, and long copy separately.
 
-景深和运动模糊服务主体分离，先渲染测试段评估成本；字幕和关键 UI 通常置于独立清晰层。震动、闪白不是电影感必需项；需要时提供低运动版本。
+Depth of field and motion blur should separate subjects. Render a test segment to assess cost; keep captions and essential UI on a separate sharp layer when appropriate. Shaking and white flashes are not prerequisites for cinematic quality; provide a reduced-motion variant when needed.
 
-## 光线、构图与声音
+## Lighting, composition, and sound
 
-高调柔光+留白用于清晰产品；低调轮廓光用于高端硬件；自然光用于人本服务；硬侧光强调工艺。素材需匹配光向、色温与阴影，UI 不能因打光丢失对比度。
+Use high-key soft light and negative space for clarity, low-key rim lighting for premium hardware, natural light for human services, and hard side lighting for craftsmanship. Match light direction, color temperature, and shadows across assets; do not sacrifice UI contrast to lighting.
 
-全景交代位置，中景展示行为，特写证明反馈，回全景交代结果。保持视线和运动方向，有意越轴时重建空间。字幕避开平台叠层与按钮，安全边距以实际输出平台验证。
+Wide shots establish place, medium shots show action, close-ups prove feedback, and returning wide shots establish results. Maintain eyelines and screen direction; re-establish space when deliberately crossing the axis. Keep captions away from platform overlays and buttons, validating safe margins for the actual output channel.
 
-点击、完成音、whoosh 各有职责，不给每个元素都加音效。旁白决定停顿，音乐让位于人声；没有授权音乐时交付注明的无音乐版，不自行下载商用歌曲。
+Clicks, completion tones, and whooshes have distinct roles; do not sound-design every element. Voiceover determines pauses, and music should yield to speech. If licensed music is unavailable, deliver an explicitly identified music-free version rather than downloading commercial songs.

@@ -1,30 +1,30 @@
-# 确定性制作与验收
+# Deterministic Production and Verification
 
-复用现有锁文件、composition、字体和构建，不随意升级。API/CLI 以项目本地类型和帮助为准，必要时查官方 Remotion 文档。
+Reuse existing lockfiles, compositions, fonts, and build commands; do not upgrade arbitrarily. Verify APIs and CLI options through local types/help and consult official Remotion documentation when needed.
 
-可分 source-ui（真实组件）、fixtures（脱敏状态）、shots（状态和镜头）、camera（几何曲线）、composition（编排/音轨/输出），但小项目不强制重构。
+Possible layers are source-ui (real components), fixtures (sanitized states), shots (state and camera), camera (geometry/curves), and composition (sequencing/audio/output). Do not force a small project into an unnecessary refactor.
 
-画面是 frame、fps、props、固定资源的函数。不用 setTimeout、requestAnimationFrame、网络、Date.now、未固定种子随机或跨帧累计状态驱动动画。渲染可能乱序请求帧。
+Every visual is a function of frame, fps, props, and fixed assets. Do not drive animation with setTimeout, requestAnimationFrame, networking, Date.now, unseeded randomness, or accumulated cross-frame state. Renderers may request frames out of order.
 
-交互用显式 idle→typing→submitted→loading→result/error 状态机，遵守真实产品行为。演示数据标注，不称远端真实完成。按钮可见可用后才点击，保留反馈因果。
+Represent interaction with explicit idle -> typing -> submitted -> loading -> result/error states matching actual product behavior. Label demonstration data; do not claim real remote completion. Click only once controls are visible and enabled, preserving action-feedback causality.
 
-## 时间与素材
+## Time and assets
 
-用秒或单一设计 fps 编排：`outputFrame=round(seconds*fps)`；`designFrame=outputFrame*designFps/outputFps`。fps 翻倍时不能忘记时长帧数。区间为 `[from,to)`，末帧是 durationInFrames-1，局部/全局帧只换算一次，过渡重叠时长不重复相加。
+Author in seconds or one design fps: `outputFrame=round(seconds*fps)`; `designFrame=outputFrame*designFps/outputFps`. When fps doubles, update duration in frames. Use half-open intervals `[from,to)`; the final frame is durationInFrames-1. Convert between local/global time once and do not double-count transition overlaps.
 
-字体就绪后测文字，渲染与测量使用同字重/字距。输入按 grapheme 分段，支持中文/emoji；多行按光标几何跟拍，不用固定字符比例。改文案、比例、主题后重查溢出。
+Measure text after fonts are ready, using the same weight and spacing as rendering. Segment typing by grapheme to support Chinese and emoji. Track multiline text by caret geometry, not a fixed character ratio. Recheck overflow after changing copy, aspect ratio, or theme.
 
-保留源 SVG；位图放大查清晰度，必要时请求高分素材或改镜头。记录字体、图像、品牌和音轨许可；分发项目不能依赖开发机绝对素材路径。
+Preserve source SVGs. Check bitmap quality at enlarged scales; request higher-resolution assets or alter the shot when necessary. Record font, image, brand, and audio licensing. Distributed projects must not depend on the developer machine's absolute asset paths.
 
-## 验收顺序
+## Verification sequence
 
-1. 项目已有类型检查/测试，没有则说明，不编造通过。
-2. 初始、主要动作、结果、结束抽帧；每接缝 seam-1、seam、seam+1，必要时加中点。
-3. 同环境乱序复渲染同一批帧比较，排除播放历史依赖。
-4. 实际看图检查字体、焦点、遮挡、裁切、源组件一致性、失真；没有查看能力则说明视觉 QA 未完成。
-5. 复杂效果先测试段再全片。完整播放检查节奏与停留；有音轨就听，检查遮盖人声、爆音、截尾、同步。
-6. 读取最终媒体元数据核对分辨率/fps/时长/编码/音轨；文件存在不等于规格正确，片尾不能意外黑帧。
+1. Run existing project type checks/tests; if none exist, say so rather than inventing a pass.
+2. Sample the initial state, main actions, result, and ending. At each seam inspect seam-1, seam, and seam+1, plus midpoints where needed.
+3. Re-render the same frames out of order in the same environment and compare, excluding playback-history dependencies.
+4. Actually inspect frames for typography, focus, overlap, clipping, source-component fidelity, and distortion. If image inspection is unavailable, disclose that visual QA is incomplete.
+5. Test complex effects in short segments before full rendering. Watch the whole film for rhythm and holds; listen to any audio for masked speech, clipping, truncated tails, and synchronization.
+6. Read final media metadata to verify dimensions, fps, duration, codec, and audio tracks. File existence is not specification compliance; avoid unintended black ending frames.
 
-渲染失败交付具体错误与已验证范围，不截图冒充视频，不无限重试相同失败。额外付费、外部发布或扩大系统操作先请求方向。
+On render failure, deliver the specific error and verified scope. Do not substitute screenshots for a video or retry identical failures indefinitely. Ask before additional spending, external publication, or broader system operations.
 
-交付实际 composition ID、可用命令、文件路径、来源表和未决项。区分设计示范、实现完成、类型检查、抽帧、整片播放验证。
+Deliver the actual composition ID, working commands, file paths, provenance inventory, and unresolved items. Distinguish design specification, implementation, type checking, sampled-frame inspection, and full-playback verification.

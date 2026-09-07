@@ -1,47 +1,47 @@
-# 片型、叙事与企业风格
+# Formats, Narratives, and Enterprise Styles
 
-## 片型优先
+## Choose the format first
 
-| 片型 | 叙事结构 | 证据与镜头 |
+| Format | Narrative structure | Evidence and camera priorities |
 | --- | --- | --- |
-| 企业品牌片 | 处境/信念→人的行动→能力→影响→邀请 | 真实场景与事实；建立镜头、人本视角 |
-| 产品介绍 | 痛点→机制→价值→CTA | 产品是什么、为何有效；全局到局部 |
-| 功能 demo | 初始→输入→动作→反馈→结果 | 完整任务链、真实 UI；跟拍+结果稳态 |
-| 操作教程 | 目标/前提→步骤→检查点→排错→总结 | 可复现入口与参数；固定镜头、必要放大 |
-| 发布短片 | 悬念→新能力→亮点证据→日期/行动 | 真实新旧差异与可用范围；高潮后落稳 |
-| 客户案例 | 角色/基线→阻碍→采用→结果 | 有出处的数字、授权引用；纪实+操作 |
-| 展会循环片 | 可读钩子→能力→品牌→回环 | 静音可懂、中途可识别；大构图和长 hold |
+| Corporate brand film | Situation/belief -> human action -> capability -> impact -> invitation | Real scenes and facts; establishing shots and human perspectives |
+| Product introduction | Pain -> mechanism -> value -> CTA | What the product is and why it works; global-to-local reveals |
+| Functional demo | Initial state -> input -> action -> feedback -> result | Complete task loop and real UI; tracking with a stable result |
+| Tutorial | Goal/prerequisites -> steps -> checkpoints -> troubleshooting -> recap | Reproducible entry points and parameters; locked shots with necessary magnification |
+| Launch film | Suspense -> new capability -> evidence -> date/action | Actual changes and availability; settle after the climax |
+| Customer story | Role/baseline -> obstacle -> adoption -> outcome | Supported numbers and authorized quotations; documentary plus operation footage |
+| Exhibition loop | Readable hook -> capability -> brand -> loop | Understandable without sound and recognizable midway; large compositions and longer holds |
 
-## 叙事手法
+## Narrative techniques
 
-- 问题—机制—结果：工具产品通用骨架，机制必须展示，不能只讲形容词。
-- 用户任务旅程：跟随一个人做成一件事，适合 SaaS、教育、服务，不串十个无关功能。
-- 结果先行/倒叙：先给产物再解释过程，适合创作与分析，之后补足因果。
-- 前后对照：适合效率改进，基线、单位和条件一致，有证据才写提升百分比。
-- 微观—宏观/逐层揭示：零件、订单、节点到系统，适合工业和基础设施。
-- 悬念—揭示—验证：适合发布片，揭示后给证据；教程不故意藏答案。
-- 双线交汇：客户/团队、需求/供应最终合一，明确角色标签。
-- 反差与停顿：混乱到秩序、快到静、近到远，让价值可见，不编造竞品缺陷。
-- 循环母题：开场形状/文字/动作在结尾得到新含义，不必总用 Logo。
-- 章节阶梯：目标→准备→操作→验证→恢复，适合长教程独立定位。
+- Problem-mechanism-result: a dependable tool-product structure; show the mechanism instead of relying on adjectives.
+- User task journey: follow one person accomplishing one thing, suitable for SaaS, education, and services; avoid a chain of unrelated features.
+- Outcome-first / flashback: show the artifact before explaining its creation, useful for creative and analytical tools; subsequently establish causality.
+- Before-and-after: useful for efficiency improvements; align baselines, units, and conditions, and support percentage claims with evidence.
+- Micro-to-macro / progressive reveal: move from part, order, or node to system, useful for industry and infrastructure.
+- Suspense-reveal-verification: useful for launches; provide evidence after the reveal. Do not hide answers in tutorials.
+- Converging threads: bring customer/team or demand/supply paths together with clear role labels.
+- Contrast and pause: chaos to order, fast to still, near to far; make value visible without inventing competitor defects.
+- Recurring motif: give an opening shape, phrase, or action new meaning at the ending; a logo is not mandatory.
+- Chapter ladder: goal -> preparation -> action -> verification -> recovery, enabling navigation in longer tutorials.
 
-## 多行业风格方向
+## Industry style directions
 
-用户明确的品牌 guideline 优先。以下不是品牌仿制模板，也不要求同行都一样。
+Explicit user brand guidelines take priority. These are not brand-imitation templates or rules that every company in an industry should look alike.
 
-| 方向 | 视觉/摄影语法 | 叙事证明与禁区 |
+| Direction | Visual and photographic language | Proof and boundaries |
 | --- | --- | --- |
-| 极简消费科技 | 留白、精密字排、慢推、macro | 一件事变简单→真实反馈；避免全片空口号 |
-| B2B SaaS / 协作 | 原生 UI、网格、任务跟拍 | 工作流闭环；避免随机悬浮窗口和假通知 |
-| AI / 开发者工具 | 真实终端/编辑器、字形接力 | 输入→执行→产物；不把模拟称实测 |
-| 金融 / 保险 | 稳重色彩、固定机位、数字特写 | 条件、风险、结果；不编造收益或保证 |
-| 医疗 / 生物 / 健康 | 柔光、清晰层级、克制运动 | 工作流和已获证事实；不捏造疗效或暴露患者 |
-| 工业 / 能源 / 汽车 | 低机位、轮廓光、爆炸图、拉远 | 零件→机制→工况；不虚构工程结构 |
-| 电商 / 美妆 / 时尚 | 材质特写、旋转台、颜色节奏 | 情境→细节→购买路径；不虚构质地尺寸效果 |
-| 高端 / 奢侈品 | 低调光、慢轨、留白、少量声音 | 工艺与事实；避免密集弹跳和假背书 |
-| 教育 / 公共服务 | 明亮亲和、固定视角、步骤注释 | 从不会到完成；不遮操作入口、不只做广告 |
-| 物流 / 地产 / 旅游 | 地图俯视、路线跟拍、区域到场景 | 地点→路径→体验；核实地图与服务范围 |
-| 游戏 / 体育 / 娱乐 | 动作匹配、快速插镜、速度变化 | 目标→挑战→高潮→反馈；包装不冒充玩法 |
-| 可持续 / 非营利 | 自然光、人本纪录、地点上下文 | 问题→行动→可核验影响；不用无来源环保数字 |
+| Minimal consumer technology | Negative space, precise typography, slow pushes, macro | Make one task simpler and show real feedback; avoid an entire film of empty slogans |
+| B2B SaaS / collaboration | Native UI, grids, task tracking | Complete workflows; avoid arbitrary floating windows and fake notifications |
+| AI / developer tools | Real terminals/editors, glyph relays | Input -> execution -> artifact; do not call simulations measurements |
+| Finance / insurance | Restrained color, locked shots, numerical inserts | Conditions, risks, results; no invented returns or guarantees |
+| Medical / biotech / health | Soft light, clear hierarchy, restrained motion | Workflows and substantiated facts; no invented efficacy or exposed patient data |
+| Industry / energy / automotive | Low angles, rim light, exploded views, pullbacks | Parts -> mechanisms -> operating conditions; no invented engineering structure |
+| Commerce / beauty / fashion | Material details, turntables, rhythmic color | Context -> details -> purchase path; do not invent texture, dimensions, or effects |
+| Premium / luxury | Low-key light, slow tracking, negative space, sparse sound | Craftsmanship and facts; avoid constant bouncing and fake endorsements |
+| Education / public services | Bright approachable scenes, stable views, step annotations | From unfamiliarity to completion; do not obscure controls or deliver only advertising |
+| Logistics / property / travel | Overhead maps, route tracking, region-to-scene movement | Place -> route -> experience; verify maps and service coverage |
+| Games / sports / entertainment | Action matches, quick inserts, speed changes | Goal -> challenge -> climax -> feedback; promotional visuals must not masquerade as gameplay |
+| Sustainability / nonprofit | Natural light, human documentary, location context | Problem -> action -> verifiable impact; no unsupported environmental metrics |
 
-每镜一条核心信息：旁白解释原因，画面证明操作，字幕承担术语/数字，不三遍重复长句。静音渠道保证无声可懂，多语言用实际文案测阅读时长。音乐服从品牌，不强制史诗配乐。结尾教程强调成功判据，销售片才可能是预约 demo。
+Give each shot one core message: voiceover explains why, visuals prove the action, and captions carry terms/numbers. Do not repeat the same long sentence three ways. Silent channels must work without audio; measure reading time with actual localized copy. Music serves the brand rather than defaulting to an epic score. Tutorial endings emphasize success criteria; sales films may invite viewers to book a demo.

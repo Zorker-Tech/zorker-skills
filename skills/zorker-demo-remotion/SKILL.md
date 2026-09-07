@@ -1,32 +1,32 @@
 ---
 name: zorker-demo-remotion
-description: 为 Remotion 企业宣传片、产品介绍、功能 demo 和操作教程设计并实现电影化运镜与叙事；尤其用于用户指定从已有应用源码引入或提取纯组件制作视频、或为产品视频设计分镜的任务。作为 Remotion 实现技能的导演与源码复用补充，不用于无视频需求的普通 UI 开发。
+description: Design and produce cinematic Remotion brand films, product introductions, functional demos, and tutorials. Use especially when users specify an existing application's source components for a video or need product-video storyboards. Complements Remotion implementation skills with directing and source-component reuse; not for ordinary UI development without a video deliverable.
 ---
 
 # Zorker Demo Remotion
 
-把产品事实、真实组件、视觉叙事和可重复渲染连接起来。电影感来自注意力、空间、节奏和声画关系，不是给所有界面增加旋转和模糊。
+Connect product facts, real components, visual storytelling, and repeatable rendering. Cinematic quality comes from attention, space, rhythm, and sound-image relationships, not rotating and blurring every interface.
 
-## 必须遵守的源码要求
+## Mandatory source-component requirement
 
-用户指定从某个已有应用源码引入/提取纯组件用于 Remotion 动画时，必须实际照做：定位指定源码，优先导入纯展示组件；存在运行时耦合则提取展示层、样式、字体、图标和必要依赖，用显式 props 驱动。不得为省事、赶时间或追求风格擅自重画近似 UI、换组件库、使用截图/录屏/生成图片/iframe 冒充源码提取。
+When the user specifies importing or extracting pure components from an existing application's source for a Remotion animation, actually do it. Locate that source and prefer importing pure presentation components. Where runtime coupling exists, extract the presentation layer, styles, fonts, icons, and required dependencies, driven by explicit props. Do not substitute approximate redrawn UI, another component library, screenshots, recordings, generated images, or an iframe and present them as source extraction, whether for convenience, speed, or style.
 
-源码不可访问、缺失、许可不明确或无法安全解耦时，报告具体阻塞，请求用户提供源码或明确授权替代；可继续独立的脚本和分镜，不能声称完成提取。普通依赖问题应先尝试解耦。未经要求不修改源应用业务逻辑。详见 [源码组件协议](references/source-components.md)。
+If source is inaccessible, missing, has unclear licensing, or cannot be safely decoupled, report the specific blocker and request the source or explicit permission for an alternative. Continue independent scripting and storyboarding where useful, but do not claim extraction is complete. Attempt to resolve ordinary dependency coupling before treating it as a blocker. Do not change the source application's business logic without authorization. Read the [source-component protocol](references/source-components.md).
 
-## 工作流与按需阅读
+## Workflow and selective reading
 
-1. **定 brief。** 提取产品、受众、核心行动、片型、时长/比例/fps、渠道、语言、素材与指定源码。沿用明确要求；非关键缺项注明假设，仅询问影响真实性、授权或交付的缺项。用户提供视觉参考时，核实可访问的素材与需求；不要把源码分析说成已看过成片。
-2. **选叙事。** 阅读 [行业与叙事](references/narrative-and-industries.md)，选一个主结构和视觉方向。宣传片讲价值，demo 证明任务闭环，教程保证可复现，不混为功能卡片轮播。
-3. **锁定真实 UI。** 指定源码时先读组件协议，产出来源清单与静态代表状态。让镜头适应组件，不扭曲组件迎合镜头。
-4. **写分镜。** 阅读 [摄影与运镜](references/cinematography.md)。每镜记录起止时间/帧、叙事目的、主体与状态、景别/焦点/轨迹、入出镜锚点、字幕/旁白/音效、证据和验收条件。只选有动机的技法，不要求一条片用遍技法库。
-5. **实现。** 阅读 [时间线与验收](references/remotion-production.md)。复用现有 Remotion 项目的入口、锁定版本和构建。具体 API 查本地类型/依赖，必要时查官方文档；环境提供 Remotion create/markup/render 等技能时仅加载本次相关部分，本技能不替代其版本专用实现指导。
-6. **验证交付。** 检查静态 UI、任意帧确定性、接缝前后帧、完整播放与最终媒体。交付源文件、分镜、来源记录、验证结论及请求格式的输出；未渲染/未听音轨明确说明。不擅自发布、购买素材或调用付费生成服务。
+1. **Define the brief.** Identify product, audience, primary action, format, duration/aspect ratio/fps, channel, language, assets, and specified source. Preserve explicit requirements. State assumptions for noncritical omissions; ask only about gaps affecting truthfulness, authorization, or delivery. When visual references are supplied, verify accessible assets and requirements; do not describe source inspection as watching a finished video.
+2. **Choose the narrative.** Read [narratives and industries](references/narrative-and-industries.md). Choose one main structure and visual direction. Brand films communicate value, demos prove a task loop, and tutorials enable reproduction; do not reduce them all to feature-card carousels.
+3. **Establish the real UI.** When source is specified, read the component protocol first and produce a provenance inventory and representative static states. Adapt the camera to the component rather than distorting the component for the shot.
+4. **Storyboard.** Read [cinematography](references/cinematography.md). For each shot record time/frame range, narrative purpose, subject and state, framing/focus/path, entry and exit anchors, captions/voiceover/sound, evidence, and acceptance criteria. Select motivated techniques, not every technique in the library.
+5. **Implement.** Read [production and verification](references/remotion-production.md). Reuse the existing Remotion entry point, pinned versions, and build. Check local types/dependencies for APIs and consult official documentation when needed. If relevant Remotion create/markup/render skills are available, load only the required parts; this skill does not replace version-specific implementation guidance.
+6. **Verify and deliver.** Check static UI fidelity, arbitrary-frame determinism, transition boundaries, full playback, and final media. Deliver source files, storyboard, provenance records, verification results, and the requested output format. Explicitly disclose unrendered output or unreviewed audio. Do not publish, purchase assets, or call paid generation services without authorization.
 
-## 示例与边界
+## Examples and boundaries
 
-- 首次使用或需要完整示范：读 [30 秒产品 demo](references/example-product-demo.md)。这是制作规格，不是已渲染视频，也不假装附带用户源码。
-- 需要连续转场、字形接力或输入跟拍：读 [通用镜头配方](references/motion-recipes.md)，按实际组件几何、品牌和文案调整。
+- For a complete example, read the [30-second product demo](references/example-product-demo.md). It is a production specification, not a rendered video or bundled user source.
+- For continuous transitions, glyph relays, or typing tracking, read [motion recipes](references/motion-recipes.md). Adapt them to actual component geometry, brand, and copy.
 
-## 完成标准
+## Definition of done
 
-指定源码可追溯且实际用于画面；产品行为未因剪辑被伪造；关键状态可读；镜头衔接有空间依据；渲染由帧确定；规格符合 brief。编译通过不等于视觉通过，静帧通过不等于整片节奏通过。
+Specified source is traceable and actually used on screen; editing does not fabricate product behavior; key states remain readable; transitions have a spatial basis; rendering is frame-determined; output matches the brief. Compilation does not prove visual quality, and still frames do not prove full-film pacing.

@@ -1,30 +1,30 @@
-# 常用示范：30秒协作产品 demo
+# Worked Example: A 30-Second Collaboration Demo
 
-这是制作规格，不是已渲染视频或附带真实应用组件。Zorker Workspace 为虚构示例名，任务数据为演示数据；实际制作替换为用户产品与已核验能力。
+This is a production specification, not a rendered video or bundled application components. Zorker Workspace is a fictional example name and the task data is illustrative. Replace both with the user's product and verified capabilities.
 
-## 示例请求
+## Example request
 
-> 使用 $zorker-demo-remotion，制作30秒、1920×1080、60fps的企业协作产品 demo。从我提供的应用仓库引入或提取真实输入框、任务卡片和结果面板纯组件。使用 Logo 进入输入框的连续转场与文字跟拍，用我们的品牌，展示输入任务→执行反馈→查看结果，数据标为演示。
+> Use $zorker-demo-remotion to make a 30-second, 1920x1080, 60fps enterprise collaboration demo. Import or extract the actual composer, task-card, and result-panel presentation components from the application repository I provide. Use a continuous logo-to-composer transition and typing tracking with our brand. Show task input -> execution feedback -> results, labeling demonstration data.
 
-先取得真实仓库路径并找到实际导出。Composer/TaskCard/ResultPanel 只是角色名，不假装已存在。核实产品支持闭环；不支持时调整脚本，不发明能力。
+Obtain the real repository path and locate actual exports first. Composer, TaskCard, and ResultPanel are roles, not claims that those symbols exist. Verify the product supports the complete loop; otherwise revise the script instead of inventing capabilities.
 
-主结构为“一个任务旅程”，风格为原品牌 tokens+稳定 UI+精密推拉；母题是光标→进度→结果定位线。焦点推拉、跟拍、结果 reveal 三类足够，不加无关 orbit。
+Use one task journey, original brand tokens, stable UI, and precise pushes/pullbacks. The recurring motif is caret -> progress -> result indicator. Focused push/pull, tracking, and a result reveal are enough; do not add unrelated orbits.
 
-## 1800帧分镜（半开区间）
+## Storyboard: 1,800 frames, half-open intervals
 
-| 时间/帧 | 内容与状态 | 镜头与接力 | 字幕/声音和验收 |
+| Time / frames | Content and state | Camera and transition | Captions, sound, and acceptance |
 | --- | --- | --- | --- |
-| 0–3s / [0,180) | 品牌+一个任务目标 | 全景轻推，保留标识负空间 | “把需求，变成可交付结果。”承诺需符合能力 |
-| 3–6s / [180,360) | 标识入口→源输入框 idle | 推进负空间，用真实输入框边缘接形后拉回 | 短转场音，演示标识；检查锚点/速度，不手画替代 |
-| 6–12s / [360,720) | 输入“整理本周客户反馈，生成待办清单” | 跟随实测文字前沿，读完停住 | 可选轻打字音；中文不拆坏，按钮在安全窗 |
-| 12–17s / [720,1020) | 提交→pending→执行反馈 | 点击前hold，中景保留反馈位置 | “步骤和进度，清楚可见。”压缩等待注明 |
-| 17–24s / [1020,1440) | 完成→结果面板和任务卡 | 结果局部特写后拉开显示全局 | “结果回到同一个工作界面。”至少读清一条 |
-| 24–28s / [1440,1680) | 稳定结果和下一步入口 | 固定镜头，外部注释不改源 UI | “查看结果，继续下一步。”无伪造效能数据 |
-| 28–30s / [1680,1800) | 品牌+实际CTA | 结果锚点 match cut 回品牌母题 | 用户指定CTA，片尾不黑屏 |
+| 0-3s / [0,180) | Brand and one task goal | Gently push in a wide shot, retaining mark negative space | "Turn a request into a deliverable." The promise must match capability |
+| 3-6s / [180,360) | Mark portal -> actual composer, idle | Enter negative space, match the real composer edge, then pull back | Brief transition sound and demo label; check anchor/velocity, no redrawn replacement |
+| 6-12s / [360,720) | Type "Summarize this week's customer feedback into action items" | Follow the measured text front, then hold | Optional soft typing sounds; preserve graphemes and keep the button in the safe window |
+| 12-17s / [720,1020) | Submit -> pending -> execution feedback | Hold before clicking; keep feedback in a medium shot | "See each step and its progress." Label compressed waiting |
+| 17-24s / [1020,1440) | Completed -> results and task cards | Show a result close-up, then reveal the whole context | "Keep the result in the same workspace." Allow at least one item to be read |
+| 24-28s / [1440,1680) | Stable result and next-action entry | Locked shot with external annotations, not altered source UI | "Review the result. Take the next step." No fabricated performance claims |
+| 28-30s / [1680,1800) | Brand and actual CTA | Match cut from the result anchor to the brand motif | User-selected CTA; no unintended black ending |
 
-转场占既定时间，层可重叠，总长仍1800帧。旁白读不完时缩文案或确认延长，不无条件加速。
+Transitions occupy the specified time; layers may overlap, but total duration remains 1,800 frames. If voiceover does not fit, shorten the copy or confirm a longer duration rather than automatically speeding it up.
 
-## 适配设计示意（非产品既有API）
+## Adapter sketch, not an existing product API
 
 ```ts
 type DemoState = {
@@ -36,21 +36,21 @@ type DemoState = {
 type CameraPose = {focusX: number; focusY: number; scale: number};
 // stateAt(frame, fps, fixture) -> DemoState
 // cameraAt(frame, fps, measuredAnchors) -> CameraPose
-// SourceAdapter 映射到实际组件原有 props，CameraRig 仅变换外层。
+// SourceAdapter maps to actual component props; CameraRig transforms only the outer layer.
 ```
 
-360帧开始输入，660前完成并留60帧阅读/提交准备；720显示提交反馈，1020显示结果。依据真实产品调整，不强行造执行反馈。真实字体测量文字前沿，不使用与实际布局无关的固定横移距离。
+Begin typing at frame 360 and finish before 660, reserving 60 frames for reading and submission preparation. Show submission feedback at 720 and results at 1020. Adapt these events to real behavior rather than inventing execution feedback. Measure the text front with the actual font; do not use a fixed tracking distance unrelated to layout.
 
-来源表至少三项：输入框、卡片、结果面板的真实 source path/revision、使用方式、资源与代表状态对照。路径缺失则标待取得，不写完成。
+The provenance inventory needs at least three entries: composer, task card, and result panel, each with actual source path/revision, reuse method, assets, and representative state comparisons. Mark missing paths as awaiting access, not complete.
 
-## 验证与交付
+## Verification and delivery
 
-抽帧0、179、180、359、360、660、719、720、1019、1020、1439、1440、1679、1680、1799；实际接缝补seam±1，另测最长文案/最快跟拍。乱序复渲染检查确定性。整片播放看任务是否一遍可懂、步骤是否真实、结果是否可读、音轨是否同步。核对1920×1080、60fps、约30秒与音轨；交付源组件清单、分镜、工程、视频及验证范围。
+Sample frames 0, 179, 180, 359, 360, 660, 719, 720, 1019, 1020, 1439, 1440, 1679, 1680, and 1799. Add seam±1 at actual transitions, plus longest-copy and fastest-tracking cases. Re-render out of order to check determinism. Watch the full film for first-view comprehension, truthful steps, readable results, and synchronized audio. Verify 1920x1080, 60fps, approximately 30 seconds, and the requested audio tracks. Deliver the source inventory, storyboard, project, video, and verified scope.
 
-## 迁移与压力情境
+## Adaptations and pressure cases
 
-- 45秒教程：缩品牌引子，补前提/入口，每步加固定镜头/检查点，结尾成功判据与排错。
-- 20秒工业介绍：保留源操作面板；入口换有资料支持的零件细节，执行换工况反馈，不生成虚构内部结构。
-- 15秒电商短片：真实商品页+授权产品素材；展示规格选择，未经授权不下单。
-- 医疗/金融：合成身份数据，去除无依据疗效/收益承诺，保留风险提示和结果阅读时间。
-- 源码不可访问且仅剩十分钟：继续文案/分镜/镜头数学，报告缺失路径并请求源码，不画近似 UI 冒充完成。仅在明确获准后做标记清楚的临时概念稿，最终源码版本仍待完成。
+- 45-second tutorial: shorten the brand opening, add prerequisites/entry points, hold each step/checkpoint, and end with success criteria and troubleshooting.
+- 20-second industrial introduction: retain the real control panel; use documented part details for the opening and real operating-condition feedback, not invented internal structure.
+- 15-second commerce film: use the real product-page component and authorized product assets; show option selection without placing an unauthorized order.
+- Healthcare/finance: use synthetic identities/data, remove unsupported efficacy/return promises, and retain risk notices and result-reading time.
+- Source inaccessible with ten minutes remaining: continue script/storyboard/camera math, identify the missing path, and request access. Do not draw approximate UI and claim completion. Only make a clearly labeled temporary concept after explicit approval; final source-based delivery remains outstanding.
