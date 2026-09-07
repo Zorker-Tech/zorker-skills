@@ -39,7 +39,7 @@ adapter. Existing, differing installations are never overwritten unless
 `--force` is present; forced updates use a temporary backup and restore it if
 copying fails.
 
-## Included skill
+## Included skills
 
 `ai-website-strategist` plans, scores, scaffolds, and validates complete public
 websites for enterprise AI products. Its source is deliberately vendor-neutral
@@ -55,6 +55,22 @@ zorker-skills run ai-website-strategist validate build/site
 Package-local example paths live inside
 `skills/ai-website-strategist/examples/`. Run the toolkit directly from a
 checked-out repository when experimenting with those files.
+
+`zorker-demo-remotion` guides cinematic brand films, product introductions,
+functional demos, and tutorials across industries. It includes camera and
+editing techniques, narrative patterns, a 30-second demo specification, and
+frame-based production checks. When users specify an application's source,
+the skill requires actual component imports or presentation-layer extraction,
+not approximate replacement UI.
+
+```bash
+zorker-skills install zorker-demo-remotion --agent codex
+zorker-skills import zorker-demo-remotion --agent codex
+```
+
+Invoke `$zorker-demo-remotion` in the receiving agent with the product brief
+and source location. This is an instruction skill, not a standalone video
+renderer, and does not register a CLI `run` command.
 
 ## Repository layout
 

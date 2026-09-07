@@ -27,6 +27,33 @@ test('agent detection respects an isolated home', () => {
   fs.rmSync(root, { recursive: true, force: true });
 });
 
+test('Remotion instruction skill is listed and installs its complete portable references', () => {
+  const skill = findSkill('zorker-demo-remotion');
+  assert.equal(skill.entry, 'SKILL.md');
+  assert.equal(Object.keys(skill.commands || {}).length, 0);
+  const listed = spawnSync(process.execPath, [cli, 'list', '--json'], { encoding: 'utf8' });
+  assert.equal(listed.status, 0, listed.stderr);
+  assert.ok(JSON.parse(listed.stdout).some((entry) => entry.name === skill.name));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'zskills-remotion-'));
+  try {
+    const [installed] = installSkill(skill.name, { target: path.join(root, 'skills') });
+    assert.equal(installed.action, 'installed');
+    assert.equal(digestDirectory(installed.destination), digestDirectory(skill.root));
+    for (const relative of ['SKILL.md', ...fs.readdirSync(path.join(installed.destination, 'references')).map((name) => `references/${name}`)]) {
+      const file = path.join(installed.destination, relative);
+      const prose = fs.readFileSync(file, 'utf8');
+      assert.doesNotMatch(prose, /codex:\/\/threads\/|\/Users\/|\/Volumes\//, relative);
+      for (const match of prose.matchAll(/\]\(([^)]+)\)/g)) {
+        const target = path.resolve(path.dirname(file), match[1]);
+        assert.ok(target.startsWith(installed.destination + path.sep), match[1]);
+        assert.ok(fs.statSync(target).isFile(), match[1]);
+      }
+    }
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
 test('custom install is safe, idempotent, and force-updatable', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'zskills-install-'));
   const target = path.join(root, 'skills');

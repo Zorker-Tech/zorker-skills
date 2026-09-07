@@ -22,6 +22,23 @@
         "scoring",
         "scaffolding"
       ]
+    },
+    {
+      "name": "zorker-demo-remotion",
+      "displayName": "Zorker Demo Remotion",
+      "description": "Create cinematic Remotion brand films, product demos, and tutorials with real source components and industry-specific storytelling.",
+      "version": "1.0.0",
+      "path": "zorker-demo-remotion",
+      "entry": "SKILL.md",
+      "tags": [
+        "remotion",
+        "video",
+        "product-demo",
+        "tutorial",
+        "cinematography",
+        "storytelling",
+        "source-components"
+      ]
     }
   ]
 }
